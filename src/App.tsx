@@ -36,7 +36,7 @@ const theme = createMuiTheme({
 });
 
 const brands = [
-  {title: "My LooC", term: "loocfun", subfolder: "loocfun/fs"},
+  {title: "My LooC", term: "loocfun", subfolder: "loocfun"},
   {title: "Reframd", term: "reframd", subfolder: "reframd"},
   {title: "DOM VETRO", term: "domvetro", subfolder: "domvetro"},
 ]
