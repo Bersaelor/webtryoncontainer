@@ -9,6 +9,7 @@ This is a sample implementation of an online shop written in [React](https://rea
 ## How to start on your own machine
 
 To test this app locally, git clone the project and run
+
 ```
     yarn install
     yarn start
@@ -28,9 +29,21 @@ If you want to change the contents of the Try-On after it has finished loading, 
 ```
 
 where the type can be one of the following
+
 - `f` for frame, with the identifier of the frame from the LooC CMS
 - `p` for plastic, with the identifier of the plastic color from the LooC CMS
 - `m` for metal, with the identifier of the metal color from the LooC CMS
 - `l` for lens, with the identifier of the lens from the LooC CMS
 
 and `domain` has to be provided for security reasons and should be `tryon.looc.io`.
+
+### Remote gltf input
+
+It is also possible to load arbitary unstructured `*.gltf` files from a remote server.
+Those models should be properly sized and positioned to sit correctly on the face, otherwise there are no restrictions.
+This is done in the following way:
+
+```{javascript}
+    const iframe = document.getElementById('Try-On-Frame') as HTMLIFrameElement
+    iframe.contentWindow?.postMessage({ type: 'link', link: 'https://host.com/../exampleGlasses.glb'}, domain)
+```
